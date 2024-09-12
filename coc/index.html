@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code of Conduct</title>
+    <style>
+        /* General reset and basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden; /* Optional: This hides horizontal scrollbar completely */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .back-button {
+            background-color: #f0c14b;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #f0c14b;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #232f3e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            position: relative;
+            width: 100%;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #232f3e;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-buttons">
+            <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <h1>Code of Conduct</h1>
+            
+            <div class="section">
+                <h2>Respectful Behavior</h2>
+                <ul>
+                    <li><strong>Bigotry:</strong> Nova Tag is committed to providing a welcoming environment for all players. Any form of bigotry, including but not limited to racism, sexism, homophobia, transphobia, or any other discriminatory behavior, is strictly prohibited.</li>
+                    <li><strong>Harassment:</strong> Harassment of any kind, including unwanted comments or behavior that targets an individual’s personal characteristics or identity, is not allowed.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Fair Play</h2>
+                <ul>
+                    <li><strong>Hacking and Exploiting:</strong> Using cheats, hacks, or exploiting bugs to gain an unfair advantage in the game is strictly prohibited. This includes any software or methods that modify the game or provide unauthorized benefits.</li>
+                    <li><strong>Out of Bounds:</strong> Do not attempt to circumvent the game’s boundaries or explore areas not intended for player interaction. Engaging in such activities may disrupt gameplay for others and is against the rules.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Appropriate Content</h2>
+                <ul>
+                    <li><strong>Inappropriate Content:</strong> Do not share or display any content that is offensive, explicit, or inappropriate. This includes language, images, or messages that are deemed unsuitable for the community.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Communication</h2>
+                <ul>
+                    <li><strong>Spam and Unsolicited Messages:</strong> Avoid spamming the chat or sending unsolicited messages to other players. Communication should be respectful and relevant to the game.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Account Security</h2>
+                <ul>
+                    <li><strong>Account Protection:</strong> Keep your account information secure. Do not share your password or account details with anyone. You are responsible for all activity that occurs under your account.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Bullying and Abuse</h2>
+                <ul>
+                    <li><strong>Bullying:</strong> Bullying or targeting other players with the intent to cause distress or harm is not tolerated. This includes verbal abuse, intimidation, or any form of persistent negative behavior.</li>
+                    <li><strong>Reporting Abuse:</strong> Report any instances of bullying or abuse to the game’s support team or moderators for investigation.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Reporting Issues</h2>
+                <ul>
+                    <li><strong>Submit Reports:</strong> If you encounter any violations of this Code of Conduct or issues within the game, please report them to the appropriate moderators or support team.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Compliance</h2>
+                <ul>
+                    <li><strong>Adherence to Rules:</strong> Follow any additional rules or guidelines provided by the game developers or moderators. Compliance with these rules ensures a positive experience for everyone.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Consequences</h2>
+                <ul>
+                    <li><strong>Penalties:</strong> Failure to adhere to this Code of Conduct may result in penalties, including temporary or permanent suspension of your account, depending on the severity of the violation.</li>
+                </ul>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nova Tag By LSG</p>
+    </footer>
+
+    <script>
+        // Example function for going back
+        function goBack() {
+            window.history.back();
+        }
+
+        // Example search function
+        function search() {
+            const searchInput = document.getElementById('search-input').value;
+            alert('Searching for: ' + searchInput);
+            // Implement search logic here
+        }
+    </script>
+</body>
+</html>

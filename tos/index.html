@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service</title>
+    <style>
+        /* General reset and basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden; /* Optional: This hides horizontal scrollbar completely */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .back-button {
+            background-color: #f0c14b;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #f0c14b;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #232f3e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #232f3e;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .section p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-buttons">
+            <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <h1>Terms of Service</h1>
+
+            <div class="section">
+                <h2>Effective Date</h2>
+                <p>Effective Date: 8/8/24</p>
+            </div>
+
+            <div class="section">
+                <h2>Acceptance of Terms</h2>
+                <p>By accessing or using Nova Tag, you agree to comply with and be bound by these Terms of Service. If you do not agree with these terms, please do not use the game.</p>
+            </div>
+
+            <div class="section">
+                <h2>Changes to Terms</h2>
+                <p>We reserve the right to update or modify these terms at any time. Your continued use of the game after any changes indicates your acceptance of the revised terms.</p>
+            </div>
+
+            <div class="section">
+                <h2>User Accounts</h2>
+                <p>You must create an account to access certain features of Nova Tag. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
+            </div>
+
+            <div class="section">
+                <h2>Prohibited Conduct</h2>
+                <ul>
+                    <li>Engage in any form of harassment, abuse, or offensive behavior.</li>
+                    <li>Use cheats, hacks, or any unauthorized software to gain an advantage in the game.</li>
+                    <li>Share or distribute inappropriate content.</li>
+                    <li>Impersonate other users or provide false information.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Intellectual Property</h2>
+                <p>All intellectual property rights related to Nova Tag are owned by Nova Tag LLC. You may not use, reproduce, or distribute any part of the game without explicit permission.</p>
+            </div>
+
+            <div class="section">
+                <h2>Termination</h2>
+                <p>We reserve the right to suspend or terminate your account if you violate these terms or for any other reason at our sole discretion.</p>
+            </div>
+
+            <div class="section">
+                <h2>Limitation of Liability</h2>
+                <p>To the fullest extent permitted by law, Nova Tag LLC shall not be liable for any indirect, incidental, or consequential damages arising from your use of Nova Tag.</p>
+            </div>
+
+            <div class="section">
+                <h2>Governing Law</h2>
+                <p>These terms are governed by the laws of Minnesota, USA. Any disputes arising from these terms shall be resolved in the courts.</p>
+            </div>
+
+            <div class="section">
+                <h2>Contact Information</h2>
+                <p>For any questions or concerns, please contact us at <a href="mailto:support@novatag.lol">support@novatag.lol</a>.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nova Tag By LSG</p>
+    </footer>
+
+    <script>
+        // Example function for going back
+        function goBack() {
+            window.history.back();
+        }
+
+        // Example search function
+        function search() {
+            const searchInput = document.getElementById('search-input').value;
+            alert('Searching for: ' + searchInput);
+            // Implement search logic here
+        }
+    </script>
+</body>
+</html>

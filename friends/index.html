@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .search-bar {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+        }
+
+        .search-bar button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .friends {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .friends-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .friend {
+            background-color: #f9f9f9;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .friend img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            border: 2px solid #ddd;
+        }
+
+        .friend button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .friend-info {
+            flex-grow: 1;
+        }
+
+        .friend-info h4 {
+            margin: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .friend-info p {
+            margin: 0.2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>Friends List</h1>
+    </header>
+
+    <main>
+        <section class="friends">
+            <ul class="friends-list">
+                <!-- Example friend -->
+                <li class="friend">
+                    <img src="profile-pic1.jpg" alt="LSG">
+                    <div class="friend-info">
+                        <h4>LSG</h4>
+                        <p>Tags: 50</p>
+                        <p>Tag ratio: 200</p>
+                        <p>Playtime: 100h</p>
+                        <button class="friend">Unfriend</button>
+                    </div>
+                </li>
+                <li class="friend">
+                    <img src="profile-pic2.jpg" alt="YULONG MAUHSK">
+                    <div class="friend-info">
+                        <h4>Monke</h4>
+                        <p>Tags: 75</p>
+                        <p>Tag ratio: 300</p>
+                        <p>Playtime: 150h</p>
+                        <button class="friend">Unfriend</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

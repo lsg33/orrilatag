@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .search-bar {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+        }
+
+        .search-bar button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 2rem;
+            border: 2px solid #ddd;
+        }
+
+        .profile-info {
+            flex-grow: 1;
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info p {
+            margin: 0.2rem 0;
+        }
+
+        .stats-section {
+            margin-top: 2rem;
+            border: 1px solid #ddd;
+            /* Light border for beveled effect */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Box shadow for depth */
+            padding: 1rem;
+            /* Padding inside the stats section */
+        }
+
+        .stats-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            /* Increase font size for section header */
+        }
+
+        .stats-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stats-list li {
+            background-color: #f9f9f9;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            /* Match the border color with .stats-section */
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .friend button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .product button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .friends button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .friendstuffbuttons {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: #232f3e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .report-modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .report-modal.active {
+            display: block;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #999;
+        }
+
+        .modal-body {
+            margin-bottom: 1rem;
+        }
+
+        .modal-body label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-body select,
+        .modal-body input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .modal-footer button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>User Profile</h1>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile">
+            <div class="profile-header">
+                <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="profile-info">
+                    <h2></h2>
+                    <p>Username: <span id="THeirUerName">Default</span></p>
+                    <p>Friends: <span id="friends-count">250</span></p>
+                    <button class="friendstuffbuttons">Add Friend</button>
+                    <button class="friendstuffbuttons">Block User</button>
+                </div>
+                <button onclick="showReportModal()" class="friendstuffbuttons">Report</button>
+            </div>
+
+            <div class="stats-section">
+                <h3>Stats</h3>
+                <ul class="stats-list">
+                    <li>Tags: <span id="posts-count">120</span></li>
+                    <li>Tag ratio: <span id="likes-count">450</span></li>
+                    <li>Playtime: <span id="comments-count">300</span></li>
+                </ul>
+            </div>
+        </section>
+        <div id="reportModal" class="report-modal">
+            <div class="modal-header">
+                <h2>Report User</h2>
+                <button class="close-button" onclick="closeReportModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <label for="reportReason">Reason for Report:</label>
+                <input type="text" id="reportReason" name="reportReason" placeholder="Enter reason...">
+                <label for="reportCategory">Category:</label>
+                <select id="reportCategory" name="reportCategory">
+                    <option value="hateSpeech">Hate Speech</option>
+                    <option value="cheating">Cheating</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button onclick="confirmReport()">Confirm</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nova Tag By LSG</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function search() {
+            const searchInput = document.getElementById('search-input').value;
+            alert('Searching for: ' + searchInput);
+            // Implement search logic here
+        }
+
+        function showReportModal() {
+            const modal = document.getElementById('reportModal');
+            modal.classList.add('active');
+        }
+    </script>
+
+    <script>
+        function showReportModal() {
+            const modal = document.getElementById('reportModal');
+            modal.classList.add('active');
+        }
+    </script>
+
+    <script>
+        function confirmReport() {
+            const reason = document.getElementById('reportReason').value;
+            const category = document.getElementById('reportCategory').value;
+            const RPTusername = document.getElementById('THeirUerName').textContent;
+            // Example webhook URL for testing
+            const webhookURL = 'https://discord.com/api/webhooks/1147715433605124106/Ek4BL-MFrwdF2S3cVQuY9AB5xqwELwbsC2vaxf1W9eXh-tFpzAclwJKRrRnt0ZhgEU6O';
+            const message = `New report submitted!\nReason: ${reason}\nCategory: ${category}\nUser: ${RPTusername}`;
+
+            try {
+                fetch(webhookURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        content: message,
+                        username: 'Nova Noter'
+                    })
+                }).then(response => {
+                    if (response.ok) {
+                        alert('Message sent!');
+                    } else {
+                        alert('Failed to send message.');
+                    }
+                }).catch(error => {
+                    console.error('Error:', error);
+                    alert('Error sending message.');
+                });
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error sending message.');
+            }
+
+            closeReportModal();
+            // Implement report submission logic here
+        }
+    </script>
+
+    <script>
+        function closeReportModal() {
+            const modal = document.getElementById('reportModal');
+            modal.classList.remove('active');
+        }
+    </script>
+
+
+
+    <script>
+        // Function to fetch user data based on username query parameter
+        async function fetchUserData() {
+            // Extract username from URL query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+            if (!username) {
+                console.error('Username parameter is missing');
+                return;
+            }
+            try {
+                const response = await fetch(`/api/user?username=${username}`);
+                if (!response.ok) {
+                    throw new Error('Users data not found');
+                    ErrorDataNotFound();
+                }
+                const userData = await response.json();
+                DataFound(userData);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                ErrorFetchingData();
+            }
+        }
+
+        // Call fetchUserData to initiate data fetching and UI update
+        fetchUserData();
+    </script>
+
+    <script>
+        function ErrorFetchingData(){
+            document.getElementById('THeirUerName').textContent = 'Error Loading Username';
+            document.getElementById('friends-count').textContent = 'Error Loading Friends';
+            document.getElementById('posts-count').textContent = 'Error Loading Tags';
+            document.getElementById('likes-count').textContent = 'Error Loading Tag Ratio';
+            document.getElementById('comments-count').textContent = 'Error Loading Playtime';
+        }
+        function ErrorDataNotFound(){
+            document.getElementById('THeirUerName').textContent = 'User not found';
+            document.getElementById('friends-count').textContent = 'User not found';
+            document.getElementById('posts-count').textContent = 'User not found';
+            document.getElementById('likes-count').textContent = 'User not found';
+            document.getElementById('comments-count').textContent = 'User not found';
+        }
+        function DataFound(userData){
+            document.getElementById('THeirUerName').textContent = userData.username;
+            document.getElementById('friends-count').textContent = userData.tags;
+            document.getElementById('posts-count').textContent = 'Error';
+            document.getElementById('likes-count').textContent = 'Error';
+            document.getElementById('comments-count').textContent = 'Error';
+        }
+    </script>
+
+</body>
+
+</html>

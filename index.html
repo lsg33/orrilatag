@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA TAG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .search-bar {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+        }
+
+        .search-bar button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        .tabs {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        .tabs li {
+            position: relative;
+            margin: 0;
+        }
+
+        .tabs a {
+            display: block;
+            padding: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .tabs a:hover {
+            background-color: #555;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #555;
+        }
+
+        .tabs li:hover .dropdown {
+            display: block;
+        }
+
+        .content-section {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            margin: 0.5rem 0;
+        }
+
+        .product button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .friend button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background-color: #555;
+        }
+
+        .suggested-friends {
+            margin-top: 2rem;
+        }
+
+        .friends-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            overflow-x: scroll;
+        }
+
+        .friend {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0 1rem 1rem 0;
+            flex-shrink: 0;
+            text-align: center;
+            width: 150px;
+        }
+
+        .friend img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .friend h4 {
+            margin: 0.5rem 0;
+        }
+
+        .friend p {
+            margin: 0.2rem 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .not-logged-in-content {
+            background-color: #ffe5e5;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>NOVA TAG</h1>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+        <nav>
+            <ul class="tabs">
+                <li>
+                    <a href="#">Social</a>
+                    <div class="dropdown">
+                        <a href="/profile">Profile</a>
+                        <a href="/friends">Friends</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Store</a>
+                    <div class="dropdown">
+                        <a href="/shop">Shop</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Rules</a>
+                    <div class="dropdown">
+                        <a href="/pp">Privacy Policy</a>
+                        <a href="/tos">Terms Of Service</a>
+                        <a href="/coc">Code Of Conduct</a>
+                    </div>
+                </li>
+                <li><a href="/settings">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="content-section">
+            <h2>WELCOME TO NOVA TAG</h2>
+            <p>Nova Tag is a VR game on Meta Quest.</p>
+            <h2>Our Products</h2>
+            <div class="product">
+                <img src="10000.jpg" alt="NR">
+                <h3>10000 Nova Roxx</h3>
+                <p>Use this to buy cosmetics and packs ingame.</p>
+                <button onclick="redirectToPage()">View item</button>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="NR">
+                <h3>5000 Nova Roxx</h3>
+                <p>Use this to buy cosmetics and packs ingame.</p>
+                <button onclick="redirectToPage()">View item</button>
+            </div>
+            <div class="product">
+                <img src="product1.jpg" alt="NR">
+                <h3>1000 Nova Roxx</h3>
+                <p>Use this to buy cosmetics and packs ingame.</p>
+                <button onclick="redirectToPage()">View item</button>
+            </div>
+            <div class="product">
+                <img src="product1.jpg" alt="Pck">
+                <h3>Seasonal Pack</h3>
+                <p>This is a cosmetic pack.</p>
+                <button onclick="redirectToPage()">View item</button>
+            </div>
+
+            <div class="suggested-friends">
+                <h3>Suggested Friends</h3>
+                <ul class="friends-list" id="friends-list">
+                    <!-- Example friend -->
+                    <li class="friend">
+                        <img src="profile-pic1.jpg" alt="LSG">
+                        <h4>LSG</h4>
+                        <p>Tags: 50</p>
+                        <p>Tag Ratio: 3.4%</p>
+                        <p>Playtime: 100h</p>
+                        <button class="friend">Add Friend</button>
+                    </li>
+                    <li class="friend">
+                        <img src="profile-pic2.jpg" alt="YM">
+                        <h4>Drmep</h4>
+                        <p>Tags: 753</p>
+                        <p>Tag Ratio: 5.4%</p>
+                        <p>Playtime: 150h</p>
+                        <button class="friend">Add Friend</button>
+                    </li>
+                    <li class="friend">
+                        <img src="profile-pic2.jpg" alt="YM">
+                        <h4>Monke</h4>
+                        <p>Tags: 2M</p>
+                        <p>Tag Ratio: = 0%</p>
+                        <p>Playtime: 1500h</p>
+                        <button class="friend">Add Friend</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="not-logged-in-content" class="not-logged-in-content" style="display: none;">
+                <h2>You are not logged in</h2>
+                <p>Please log in with Meta to access the main content of the page.</p>
+                <button onclick="Meta()" class="login-button">Login with Meta</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section id="about-contact" class="content-section">
+            <h2>About Us & Contact Us</h2>
+            <p>Phone: <a href="tel:5074074178">(507) 407-4178</a></p>
+            <p>Email: <a href="mailto:support@novatag.lol">support@novatag.lol</a></p>
+            <p>&copy; 2024 Nova Tag By LSG</p>
+        </section>
+    </footer>
+
+    <script>
+        function search() {
+            const searchInput = document.getElementById('search-input').value;
+            alert('Searching for: ' + searchInput);
+            // Implement search logic here
+        }
+
+        function redirectToPage() {
+            window.location.href = '/product';
+        }
+        function redirectToItem(Product) {
+            window.location.href = 'item.html';
+        }
+    </script>
+
+    <script>
+        function enableMainContent() {
+            document.querySelector('.login-button').style.display = 'none';
+            document.getElementById('not-logged-in-content').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            // Additional logic to load products and friends list
+        }
+
+        function showNotLoggedInMessage() {
+            document.querySelector('.login-button').style.display = 'block';
+            document.getElementById('not-logged-in-content').style.display = 'block';
+        }
+        function Meta() {
+            <a href= `https://auth.oculus.com/sso?client_id=7238920182799088&redirect_uri=https://fa2d614f-5877-4065-840c-7f14e9a25bd7-00-329xi1uavji0x.spock.replit.dev/index.html/?code=&response_type=code&scope=openid&org_id=828543425687060` > Login with Meta</a >
+        }
+
+    </script>
+
+    <script>
+        function LoginCheck(){
+            if (localStorage.getItem('LogIn') === 'false') {
+                showNotLoggedInMessage();
+            }
+        }
+
+        function LoginBool(){
+            const boolValue = true;
+            localStorage.setItem('LogIn', boolValue.toString());
+            
+            const LoginStatus = localStorage.getItem('LogIn');
+            const LogIn = LoginStatus === 'true';
+            
+            enableMainContent();
+        }
+    </script>
+
+</body>
+
+</html>

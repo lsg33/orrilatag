@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <style>
+        /* General reset and basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden; /* Optional: This hides horizontal scrollbar completely */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .back-button {
+            background-color: #f0c14b;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #f0c14b;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #232f3e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-buttons">
+            <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <h1>Our Privacy Policy</h1>
+            <div>
+                <h2>Information We Collect</h2>
+                <p>1. Gameplay Data: We collect data generated during your gameplay, including in-game actions, scores, and interactions with other players.</p>
+                <p>2. Device Information: We gather information about your device, such as device type, operating system, and unique device identifiers.</p>
+                <p>3. Analytics: We use third-party analytics tools to gather usage and performance data to improve the Game.</p>
+            </div>
+            <div>
+                <h2>How We Use Your Information</h2>
+                <p>1. Gameplay Enhancement: We use your data to enhance and optimize your gameplay experience, including improving game mechanics and balancing.</p>
+                <p>2. Analytics: Your information helps us analyze player behavior and preferences to improve the Game’s features and performance.</p>
+            </div>
+            <div>
+                <h2>Data Sharing</h2>
+                <p>1. Authorized Third Parties: We may share gameplay and analytics data with trusted third-party service providers who assist us in optimizing and enhancing the Game. They are obligated to protect your information.</p>
+                <p>2. Legal Compliance: We may disclose your data to comply with legal obligations, protect our rights, or respond to legal requests.</p>
+            </div>
+            <div>
+                <h2>Your Choices</h2>
+                <p>1. Opt-out: You can choose not to share gameplay data by adjusting your in-game privacy settings or ceasing to use the Game. If you wish to have your information removed, send an email to <a href="mailto:support@novatag.lol">support@novatag.lol</a>. For a faster response, visit the Request Deletion section of the website and fill out the form with your details and deletion request.</p>
+            </div>
+            <div>
+                <h2>Security</h2>
+                <p>We take reasonable measures to protect your data from unauthorized access, alteration, or disclosure.</p>
+            </div>
+            <div>
+                <h2>Children’s Privacy</h2>
+                <p>Nova Tag is not intended for individuals under the age of 13. We do not knowingly collect personal information from children.</p>
+            </div>
+            <div>
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy Policy occasionally. The updated version will be available within the Game, and you should review it periodically.</p>
+            </div>
+            <div>
+                <h2>Contact Us</h2>
+                <p>If you have questions or concerns about this policy, please contact us at <a href="mailto:support@novatag.lol">support@novatag.lol</a>.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nova Tag By LSG</p>
+    </footer>
+
+    <script>
+        // Example function for going back
+        function goBack() {
+            window.history.back();
+        }
+
+        // Example search function
+        function search() {
+            const searchInput = document.getElementById('search-input').value;
+            alert('Searching for: ' + searchInput);
+            // Implement search logic here
+        }
+    </script>
+</body>
+</html>
